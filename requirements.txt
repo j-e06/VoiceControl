@@ -1,3 +1,4 @@
 piper-tts
 cactus-needle
 gpiozero
+gpiozero

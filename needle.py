@@ -1,16 +1,15 @@
+from time import sleep
 import needle
-
+from gpiozero import LED
 from pathlib import Path
 
-import subprocess
-
-notes_path = Path("needle-notes.txt")
-
 @needle.tool
-def save_note(text: str):
-	with notes_path.open("a", encoding="utf-8") as notes:
-		notes.write(text + "\n")
-	return {"text": text, "path": str(notes_path)}
+def blink_led(pin: int):
+    led = LED(pin)
+    led.on()
+    sleep(1)
+    led.off()
+    sleep(1)
 
-@needle.tool
-
+agent = needle.Needle(tools=[blink_led])
+print(agent.run("Blink the led at pin 14.")["results"])
