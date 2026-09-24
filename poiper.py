@@ -13,6 +13,6 @@ syn_config = SynthesisConfig(
 def play_sound(instruction: str):
     with wave.open("test.wav", "wb") as wav_file:
         voice.synthesize_wav(instruction, wav_file, syn_config=syn_config)
-    subprocess.call(["aplay", "test.wav"], check=True)
+    subprocess.run(["aplay", "test.wav"], check=True)
     #subprocess.Popen(["rm", "test.wav"]) # remove file after playing.
     print("Done.")
