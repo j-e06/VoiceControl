@@ -8,4 +8,4 @@ syn_config = SynthesisConfig(
 
 voice = PiperVoice.load("en_US-arctic-medium.onnx")
 with wave.open("test.wav", "wb") as wav_file:
-    voice.synthesize_wav("hello my fellow kids, how are we doing today", wav_file, syn_config=syn_config)
+    voice.synthesize_wav("you need help you short person", wav_file, syn_config=syn_config)
