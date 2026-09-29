@@ -6,7 +6,7 @@ cd "$(dirname "$0")"
 
 VENV_DIR=".venv"
 VOICE="en_US-arctic-medium"
-VOICE_FILE="${VOICE}.onnx"
+VOICE_FILE="/models/piper/${VOICE}.onnx"
 
 echo "==> Voice Control installation"
 
