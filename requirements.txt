@@ -2,3 +2,4 @@ piper-tts
 cactus-needle==3.0.2
 gpiozero
 silero-vad[audio]
+sounddevice

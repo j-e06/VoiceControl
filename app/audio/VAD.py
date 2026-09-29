@@ -15,7 +15,7 @@ audio_queue = queue.Queue()
 
 model = load_silero_vad()
 
-
+voice_directory = "/home/robot/VC/"
 def audio_callback(indata, frames, time, status):
     if status:
         print(status, file=sys.stderr)
@@ -74,7 +74,7 @@ try:
                     # Convert float32 into 16bit pcm
                     audio_int16 = (full_audio * 32767).astype(np.int16)
 
-                    with wave.open("test.wav", "wb") as wav:
+                    with wave.open(f"{voice_directory}/test.wav", "wb") as wav:
                         wav.setsampwidth(2)
                         wav.setnchannels(1)
                         wav.setframerate(SAMPLE_RATE)
