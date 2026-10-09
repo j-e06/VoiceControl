@@ -1,7 +1,17 @@
 [
   {
     "name": "blink_led",
-    "description": "Blink an led on for 1 second, and off for 1",
-    "required": ["pin"]
+    "description": "Blink an LED connected to a raspberry pi 4 gpio pin. Turn the LED on for 1 second, and off for one",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "pin": "integer",
+        "description": "The raspberyy pi GPIO number of the led.",
+        "minimum": 0,
+        "maximum": 27
+      }
+    },
+    "required": ["pin"],
+    "additionalProperties": false
   }
 ]

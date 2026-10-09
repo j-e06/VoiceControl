@@ -33,6 +33,9 @@ class ToolExecutor:
         calls = response.get("function_calls", [])
         confidence = response.get("confidence")
 
+        print("Confidence:", confidence)
+        print("Tool calls:", calls)
+
         if not calls:
             print("No matching tool found.")
             return []
