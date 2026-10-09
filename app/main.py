@@ -68,7 +68,7 @@ class VoiceAssistant:
         result = self.whistle.transcribe(
             str(self.wav_path),
             language="en",
-            keywords=[self.wake_word],
+            keywords=[self.wake_word, "LED", "GPIO", "blink led", "pin 14"],
         )
 
         text = result.get("text", "").strip()

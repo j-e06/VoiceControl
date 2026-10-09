@@ -11,7 +11,7 @@ class ToolExecutor:
         self.BASE_DIR = Path(__file__).resolve().parent
         with open(self.BASE_DIR / "tools.json", encoding="utf-8") as f:
             tool_schemas = json.load(f)
-
+        print("Loaded schemas:", json.dumps(tool_schemas, indent=2))
         self.SCHEMAS = {tool["name"]: tool for tool in tool_schemas}
         # tool names to function mapping
         self.TOOL_HANDLERS = {
