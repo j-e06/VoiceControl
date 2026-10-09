@@ -1,7 +1,7 @@
 from time import sleep
 import needle
 from gpiozero import LED
-from poiper import play_sound
+from ..poiper import play_sound
 
 @needle.tool
 def blink_led(pin: int):
@@ -21,9 +21,10 @@ def talk_to_user(instruction:str):
     return f"User yapped to."
 
 
+
 agent = needle.Needle(tools=[blink_led, talk_to_user])
 result = agent.run(
     "Blink the led at pin 14 and say hello to the user"
 )
-
+needle.transcribe("test.wav")["text"]
 print(result)

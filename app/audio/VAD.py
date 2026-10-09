@@ -52,6 +52,8 @@ try:
 
             if currently_speaking and not speech_active:
                 print("🗣️ SPEECH START")
+                #TODO:
+                # detect LENA keyword, then start listening
 
                 # collecting audio
                 audio_buffer.append(audio)
