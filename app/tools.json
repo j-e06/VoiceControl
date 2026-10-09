@@ -5,7 +5,7 @@
     "parameters": {
       "type": "object",
       "properties": {
-        "pin": "integer",
+        "pin": "string",
         "description": "The raspberyy pi GPIO number of the led.",
         "minimum": 0,
         "maximum": 27
