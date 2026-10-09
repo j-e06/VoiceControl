@@ -43,7 +43,7 @@ class ToolExecutor:
             return []
 
         # confidence threshold, not smart to go lower tbh
-        if confidence is not None and confidence < 0.7:
+        if confidence is not None and confidence < 0.3:
             print("Uncertain tool call; not executing.")
             return []
 
