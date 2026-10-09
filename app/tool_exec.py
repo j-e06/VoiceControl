@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 import needle
-from jsonschema import validate, ValidationError
+from jsonschema import validate, ValidationError, Draft202012Validator
 from tools.testing_tools import blink_led
 
 
@@ -12,6 +12,8 @@ class ToolExecutor:
         with open(self.BASE_DIR / "tools.json", encoding="utf-8") as f:
             tool_schemas = json.load(f)
         print("Loaded schemas:", json.dumps(tool_schemas, indent=2))
+        for tool in tool_schemas:
+            Draft202012Validator.check_schema(tool["parameters"])
         self.SCHEMAS = {tool["name"]: tool for tool in tool_schemas}
         # tool names to function mapping
         self.TOOL_HANDLERS = {
