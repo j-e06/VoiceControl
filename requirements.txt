@@ -3,3 +3,6 @@ cactus-needle[mic]
 gpiozero
 silero-vad[audio]
 sounddevice
+jsonschema
+torch
+numpy

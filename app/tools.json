@@ -1,0 +1,13 @@
+[
+  {
+    "name": "blink_led",
+    "description": "Blink an led on for 1 second, and off for 1",
+    "parameters": {
+      "pin": {
+        "type": "int",
+        "description": "LED to blink"
+      }
+    },
+    "required": ["pin"]
+  }
+]
