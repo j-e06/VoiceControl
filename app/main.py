@@ -79,7 +79,7 @@ class VoiceAssistant:
         print("Whistle:", text)
 
         wake_match = re.match(
-            r"^\s*lena\b[\s,.:;!?-]*",
+            fr"^\s*{self.wake_word}\b[\s,.:;!?-]*",
             text,
             flags=re.IGNORECASE,
         )
