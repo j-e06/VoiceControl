@@ -4,7 +4,7 @@ from pathlib import Path
 import needle
 from jsonschema import validate, ValidationError, Draft202012Validator
 from tools.testing_tools import blink_led
-
+from tools.ros_tools import move_robot
 
 class ToolExecutor:
     def __init__(self):
@@ -17,7 +17,8 @@ class ToolExecutor:
         self.SCHEMAS = {tool["name"]: tool for tool in tool_schemas}
         # tool names to function mapping
         self.TOOL_HANDLERS = {
-            "blink_led": blink_led
+            "blink_led": blink_led,
+            "move_robot": move_robot
         }
 
         # make sure tools match, both in .json & .py

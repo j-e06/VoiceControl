@@ -15,5 +15,26 @@
       "required": ["pin"],
       "additionalProperties": false
     }
+  },
+  {
+    "name": "move_robot",
+    "description": "Move the robot in the given direction for the given amount of time",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "direction": {
+          "type": "string",
+          "description": "The direction to move the robot. Left, Right, Forward, Backward, Stop are accepted"
+        },
+        "mvtime": {
+          "type":"integer",
+          "description": "The amount of time the robot moves in the given direction."
+        }
+      },
+      "required": ["direction", "mvtime"],
+      "additionalProperties": false
+    }
+
   }
+
 ]
