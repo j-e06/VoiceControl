@@ -19,6 +19,7 @@ def move_robot(direction: str, mvtime: int):
     mvtime = max(0.0, min(mvtime, 1.0))
 
     linear, angular = speeds[direction]
-
-    print(f"TEST: {direction}, {mvtime}s, linear: {linear}, angular: {angular}")
+    msg.angular=angular
+    msg.linear=linear
+    print(f"TEST: {direction}, {mvtime}s, linear: {linear}, angular: {angular}, msg: {msg}")
     return {"test_run": True, "direction": direction}
